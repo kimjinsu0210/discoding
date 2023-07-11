@@ -4,7 +4,6 @@ const Post = styled.div`
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  overflow: hidden;
   white-space: nowrap;
   margin-bottom: 1rem;
   background-color: #333333;
@@ -23,9 +22,16 @@ const Post = styled.div`
 
 const PostsBox = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 5%;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 80px;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+  &::-webkit-scrollbar-thumb {
+    border: none;
+  }
 `;
 
 const CreatePost = styled(Post)`
