@@ -1,10 +1,7 @@
 import React from "react";
 import { CreatePost, Post, PostsBox } from "./styles";
-import { useQuery } from "react-query";
-import { getPosts } from "../../api/posts";
 
-const PostList = ({ setIsOpen }) => {
-  const { isLoading, isError, data } = useQuery("posts", getPosts);
+const PostList = ({ setIsOpen, isLoading, isError, data, setContentId }) => {
   if (isLoading) {
     return <p>로딩중입니다....!</p>;
   }
@@ -14,11 +11,18 @@ const PostList = ({ setIsOpen }) => {
   const openModal = () => {
     setIsOpen(true);
   };
+  const handleContentBoxLinkClick = (item) => {
+    setContentId(item.id);
+  };
   return (
     <PostsBox>
       {data.map((item) => {
         return (
-          <Post key={item.id} src={item.contentsImg}>
+          <Post
+            key={item.id}
+            src={item.contentsImg}
+            onClick={() => handleContentBoxLinkClick(item)}
+          >
             {!item.contentsImg && item.title}
           </Post>
         );
