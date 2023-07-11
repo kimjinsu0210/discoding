@@ -4,5 +4,5 @@ const HeaderBox = styled.div`
   padding: 10px;
   font-size: 13px;
   cursor: default;
-`
-export {HeaderBox};
+`;
+export { HeaderBox };

@@ -1,9 +1,7 @@
 import React from "react";
-import { HeaderBox } from "./style";
+import { HeaderBox } from "./styles";
 function Header() {
-  return (
- <HeaderBox>Discoding</HeaderBox>
-  );
+  return <HeaderBox>Discoding</HeaderBox>;
 }
 
 export default Header;
