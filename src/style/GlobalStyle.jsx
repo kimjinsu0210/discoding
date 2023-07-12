@@ -1,4 +1,11 @@
 import { createGlobalStyle } from "styled-components";
+
+export const theme = {
+  primary: "#202225",
+  secondary: "#2F3136",
+  tertiary: "#36393F",
+};
+
 export const GlobalStyle = createGlobalStyle`
 @font-face {
     font-family: 'GmarketSansMedium';
@@ -7,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
     font-style: normal;
 }
   body {
-    background-color: #1f2022;
+    background-color: ${theme.primary};
     font-family: 'GmarketSansMedium';
     color: #adadad;
   }

@@ -1,7 +1,14 @@
 import React from "react";
-import { CreatePost, Post, PostsBox } from "./styles";
+import { CreatePost, Post, PostsBox, SelectBox } from "./styles";
 
-const PostList = ({ setIsOpen, isLoading, isError, data, setContentId }) => {
+const PostList = ({
+  setIsOpen,
+  isLoading,
+  isError,
+  data,
+  setContentId,
+  contentId,
+}) => {
   if (isLoading) {
     return <p>로딩중입니다....!</p>;
   }
@@ -18,14 +25,18 @@ const PostList = ({ setIsOpen, isLoading, isError, data, setContentId }) => {
     <PostsBox>
       {data.map((item) => {
         return (
+          <>
           <Post
+            radius={item.id === contentId ? 30 : 50}
             key={item.id}
             src={item.contentsImg}
             onClick={() => handleContentBoxLinkClick(item)}
-          >
+            >
             {!item.contentsImg && item.title}
           </Post>
-        );
+              {item.id === contentId&&<SelectBox className="SelectBox"/>}
+        </>
+        )
       })}
       <CreatePost onClick={openModal}>
         <svg
@@ -38,6 +49,7 @@ const PostList = ({ setIsOpen, isLoading, isError, data, setContentId }) => {
         </svg>
       </CreatePost>
     </PostsBox>
+    
   );
 };
 
