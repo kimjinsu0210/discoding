@@ -71,22 +71,12 @@ const CloseModalSvgDiv = styled.div`
   float: right;
 `;
 
-const SubmitButton = styled.button`
-  background-color: #7289da;
-  width: 90px;
-  height: 50px;
-  border-radius: 10px;
-  float: right;
-  color: #fff;
-  cursor: pointer;
-  border: none;
-  margin: 10px;
-`;
+
+
 export {
   StLabel,
   StInput,
   PreviewImg,
-  SubmitButton,
   CloseModalSvgDiv,
   CloseModalSvg,
   ModalContent,

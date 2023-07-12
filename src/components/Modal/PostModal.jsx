@@ -1,20 +1,12 @@
-import {
-  CloseModalSvg,
-  CloseModalSvgDiv,
-  ModalContent,
-  ModalOverlay,
-  PreviewImg,
-  PreviewImgDiv,
-  StInput,
-  StLabel,
-  SubmitButton,
-} from "./styles";
-import React, { useEffect, useRef } from "react";
+import { PreviewImg, PreviewImgDiv, StInput, StLabel } from "./styles";
+import React from "react";
 import { useMutation, useQueryClient } from "react-query";
 import { addPosts } from "../../api/posts";
 import uuid from "react-uuid";
+import ModalForm from "./ModalForm";
+import Button from "../Button/Button";
 
-const Modal = ({
+const PostModal = ({
   title,
   setTitle,
   contents,
@@ -24,20 +16,6 @@ const Modal = ({
   isOpen,
   setIsOpen,
 }) => {
-  const modalRef = useRef();
-
-  const clickOutside = (event) => {
-    if (modalRef.current === event.target) {
-      closeModal();
-    }
-  };
-  useEffect(() => {
-    document.addEventListener("mousedown", clickOutside);
-    return () => {
-      document.removeEventListener("mousedown", clickOutside);
-    };
-  }, []);
-
   const closeModal = () => {
     setIsOpen(false);
     setTitle("");
@@ -58,10 +36,9 @@ const Modal = ({
     const date = new Date();
     const nowTime = date.toLocaleString();
 
-    if (!title || !contents) {
-      return alert("제목과 내용을 전부 입력해 주세요.");
+    if (title.length > 30 || contents.length > 100) {
+      return alert("제목은 30자, 내용은 100자 이하로 작성해 주세요.");
     }
-
     const newPost = {
       id: uuid(),
       title,
@@ -93,46 +70,30 @@ const Modal = ({
   return (
     <>
       {isOpen && (
-        <ModalOverlay ref={modalRef}>
-          <ModalContent>
-            <CloseModalSvgDiv onClick={closeModal}>
-              <CloseModalSvg
-                fontSize="30px"
-                fill="#969696"
-                xmlns="http://www.w3.org/2000/svg"
-                height="1em"
-                viewBox="0 0 384 512"
-              >
-                <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
-              </CloseModalSvg>
-            </CloseModalSvgDiv>
-            <form onSubmit={handleSubmitButtonClick}>
-              <StLabel>제목</StLabel>
-              <StInput
-                type="text"
-                value={title}
-                onChange={setTitle}
-                autoFocus
-              />
-              <StLabel>내용</StLabel>
-              <StInput type="text" value={contents} onChange={setContents} />
-              <StLabel>사진</StLabel>
-              <StInput type="file" onChange={handleFileChange} />
-              {previewUrl && (
-                <>
-                  <StLabel>사진미리보기</StLabel>
-                  <PreviewImgDiv>
-                    <PreviewImg src={previewUrl} alt="Preview" />
-                  </PreviewImgDiv>
-                </>
-              )}
-              <SubmitButton type="submit">만들기</SubmitButton>
-            </form>
-          </ModalContent>
-        </ModalOverlay>
+        <ModalForm closeModal={closeModal}>
+          <form onSubmit={handleSubmitButtonClick}>
+            <StLabel>제목</StLabel>
+            <StInput type="text" value={title} onChange={setTitle} autoFocus />
+            <StLabel>내용</StLabel>
+            <StInput type="text" value={contents} onChange={setContents} />
+            <StLabel>사진</StLabel>
+            <StInput type="file" onChange={handleFileChange} />
+            {previewUrl && (
+              <>
+                <StLabel>사진미리보기</StLabel>
+                <PreviewImgDiv>
+                  <PreviewImg src={previewUrl} alt="Preview" />
+                </PreviewImgDiv>
+              </>
+            )}
+            <Button type="submit" disabled={title && contents ? false : true}>
+              만들기
+            </Button>
+          </form>
+        </ModalForm>
       )}
     </>
   );
 };
 
-export default Modal;
+export default PostModal;

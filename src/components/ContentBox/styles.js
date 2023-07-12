@@ -4,7 +4,7 @@ const ContentsBox = styled.div`
   display: flex;
   justify-content: center;
   width: 1550px;
-  background-color: #3f3f46;
+  background-color: ${(props) => props.theme.tertiary};
   overflow: scroll;
   max-height: 1000px;
   &::-webkit-scrollbar {
@@ -13,18 +13,19 @@ const ContentsBox = styled.div`
   }
   &::-webkit-scrollbar-thumb {
     border-radius: 15px;
-    background-color: #1f2022;
+    background-color: ${(props) => props.theme.primary};
   }
 `;
 const Content = styled.div`
-  font-size: 25px;
+  font-size: 20px;
   width: 35%;
 `;
 const ContentLabel = styled.div`
-  padding: 20px 0 20px 0;
+  font-weight: 700;
+  padding: 10px 0 10px 0;
 `;
 const PostImg = styled.img`
   background-image: url(${(props) => props.src});
-  width: 100%;
+  width: 80%;
 `;
 export { ContentsBox, Content, ContentLabel, PostImg };
