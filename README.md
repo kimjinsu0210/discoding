@@ -49,8 +49,8 @@ $ yarn start
 ┃ ┗ 📂PostList<br>
 ┃   ┣ 📜PostList.jsx&emsp; 👉 게시글 리스트 컴포넌트<br>
 ┃   ┗ 📜styles.js<br>
-┣ 📂hooks&emsp;
-┃ ┗ 📜userInput.jsx<br> 👉 useInput 훅<br>
+┣ 📂hooks&emsp;<br>
+┃ ┗ 📜useInput.jsx<br> 👉 useInput 훅<br>
 ┣ 📂pages<br>
 ┃ ┃ 📜Login.jsx<br> 👉 로그인 페이지<br>
 ┃ ┗ 📜Main.jsx<br> 👉 메인 페이지<br>
