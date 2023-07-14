@@ -1,15 +1,5 @@
 {
-  "posts": [
-    {
-      "id": "8a98918a-22d5-3b1b-c72c-0bd495d18e7e",
-      "title": "게시물2",
-      "contents": "게시물2",
-      "contentsImg": null,
-      "date": "2023. 7. 14. 오후 4:57:51",
-      "uEmail": "test1234@naver.com",
-      "nickname": "김진수"
-    }
-  ],
+  "posts": [],
   "users": [
     {
       "id": "5db633bb-089c-38db-176a-79cc400b2280",
