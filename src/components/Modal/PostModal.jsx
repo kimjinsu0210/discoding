@@ -15,6 +15,8 @@ const PostModal = ({
   setPreviewUrl,
   isOpen,
   setIsOpen,
+  email,
+  loginUserData,
 }) => {
   const closeModal = () => {
     setIsOpen(false);
@@ -27,7 +29,6 @@ const PostModal = ({
   const mutation = useMutation(addPosts, {
     onSuccess: () => {
       queryClient.invalidateQueries("posts");
-      console.log("성공하셨습니다.");
     },
   });
 
@@ -35,9 +36,8 @@ const PostModal = ({
     event.preventDefault();
     const date = new Date();
     const nowTime = date.toLocaleString();
-
-    if (title.length > 30 || contents.length > 100) {
-      return alert("제목은 30자, 내용은 100자 이하로 작성해 주세요.");
+    if (title.length > 50 || contents.length > 1000) {
+      return alert("제목은 50자, 내용은 1000자 이하로 작성해 주세요.");
     }
     const newPost = {
       id: uuid(),
@@ -45,6 +45,8 @@ const PostModal = ({
       contents,
       contentsImg: previewUrl,
       date: nowTime,
+      uEmail: email,
+      nickname:loginUserData.nickname,
     };
 
     mutation.mutate(newPost);
@@ -86,7 +88,13 @@ const PostModal = ({
                 </PreviewImgDiv>
               </>
             )}
-            <Button type="submit" disabled={title && contents ? false : true}>
+            <Button
+              type="submit"
+              disabled={title && contents ? false : true}
+              width="90"
+              height="50"
+              float="right"
+            >
               만들기
             </Button>
           </form>
