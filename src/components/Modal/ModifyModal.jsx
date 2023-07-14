@@ -17,6 +17,7 @@ const ModifyModal = ({
   data,
   modifyModalOpen,
   setModifyModalOpen,
+  setSettingOpen,
 }) => {
   const queryClient = useQueryClient();
   const modifyMutation = useMutation(modifyPosts, {
@@ -51,6 +52,7 @@ const ModifyModal = ({
     setContents("");
     setPreviewUrl(null);
     setModifyModalOpen(false);
+    setSettingOpen(false);
   };
   // 파일 미리 보기 기능
   const handleFileChange = (e) => {

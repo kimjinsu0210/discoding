@@ -39,6 +39,7 @@ const Main = () => {
   const deletePost = () => {
     if (window.confirm("정말 삭제하시겠습니까?")) {
       deleteMutation.mutate(contentId);
+      setSettingOpen(false)
       setContentId("");
     } else return;
   };
@@ -161,6 +162,7 @@ const Main = () => {
               data={data}
               modifyModalOpen={modifyModalOpen}
               setModifyModalOpen={setModifyModalOpen}
+              setSettingOpen={setSettingOpen}
             />
           </UsersBox>
           {/* 게시물 컨텐츠 영역 */}
