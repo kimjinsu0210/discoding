@@ -6,7 +6,7 @@ const Post = styled.div`
   border-radius: ${(props) => props.radius}%;
   white-space: nowrap;
   margin-bottom: 1rem;
-  background-color: ${(props) => props.theme.tertiary};
+  background-color: ${(props) => props.color};
   background-position: center;
   background-size: cover;
   display: flex;
@@ -16,16 +16,16 @@ const Post = styled.div`
   overflow: hidden;
   background-image: url(${(props) => props.src});
   transition: border-radius 0.2s ease;
-
   &:hover {
+    background-color: ${(props) => props.theme.skyblue};
     border-radius: 30%;
   }
 `;
 
 const PostsBox = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   width: 85px;
   overflow: auto;
   &::-webkit-scrollbar {
@@ -35,9 +35,13 @@ const PostsBox = styled.div`
     border: none;
   }
 `;
-
+const StPost = styled.div`
+display:flex;
+align-items:center;
+`
 const CreatePost = styled(Post)`
   border-radius: 50%;
+  background-color: ${(props) => props.theme.tertiary};
   &:hover {
     background-color: #39ad56;
     & > svg {
@@ -50,9 +54,9 @@ const SelectBox = styled.div`
   background-color: #fff;
   border-radius: 20px;
   width: 10px;
-  height: 50px;
-  top: 5px;
+  height: ${(props) => props.height}px;
+  bottom: 10px;
   right: 78px;
   margin-right: -10px;
 `;
-export { PostsBox, CreatePost, Post, SelectBox };
+export { PostsBox, CreatePost, Post, SelectBox,StPost };

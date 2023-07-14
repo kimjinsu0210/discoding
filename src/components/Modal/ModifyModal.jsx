@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useMutation, useQueryClient } from "react-query";
 import { modifyPosts } from "../../api/posts";
 import ModalForm from "./ModalForm";
@@ -36,8 +36,8 @@ const ModifyModal = ({
     const date = new Date();
     const nowTime = date.toLocaleString();
 
-    if (title.length > 30 || contents.length > 100) {
-      return alert("제목은 30자, 내용은 100자 이하로 작성해 주세요.");
+    if (title.length > 50 || contents.length > 1000) {
+      return alert("제목은 50자, 내용은 1000자 이하로 작성해 주세요.");
     }
     const changePost = {
       title,
@@ -101,6 +101,9 @@ const ModifyModal = ({
                   <Button
                     type="submit"
                     disabled={title && contents ? false : true}
+                    width="90"
+                    height="50"
+                    float="right"
                   >
                     수정하기
                   </Button>

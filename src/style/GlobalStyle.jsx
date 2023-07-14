@@ -4,6 +4,7 @@ export const theme = {
   primary: "#202225",
   secondary: "#2F3136",
   tertiary: "#36393F",
+  skyblue: "#7289da",
 };
 
 export const GlobalStyle = createGlobalStyle`
@@ -16,6 +17,6 @@ export const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${theme.primary};
     font-family: 'GmarketSansMedium';
-    color: #adadad;
+    color: #c2c2c2;
   }
 `;

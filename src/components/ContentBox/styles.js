@@ -2,11 +2,12 @@ import { styled } from "styled-components";
 
 const ContentsBox = styled.div`
   display: flex;
-  justify-content: center;
-  width: 1550px;
+  justify-content: start;
+  width: 1200px;
   background-color: ${(props) => props.theme.tertiary};
   overflow: scroll;
   max-height: 1000px;
+ padding: 30px;
   &::-webkit-scrollbar {
     width: 8px;
     height: 100%;
@@ -18,7 +19,7 @@ const ContentsBox = styled.div`
 `;
 const Content = styled.div`
   font-size: 20px;
-  width: 35%;
+
 `;
 const ContentLabel = styled.div`
   font-weight: 700;

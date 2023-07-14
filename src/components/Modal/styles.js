@@ -3,7 +3,6 @@ import { keyframes, styled } from "styled-components";
 const StLabel = styled.h2`
   margin: 10px;
   font-size: 13px;
-  color: #000;
 `;
 const StInput = styled.input`
   border: none;
@@ -11,16 +10,12 @@ const StInput = styled.input`
   width: 95%;
   font-size: 15px;
   padding: 8px;
-  border-bottom: 1px solid #ebebeb;
-  &:focus {
-    border-bottom: 2px solid #000;
-  }
-  &:focus::placeholder {
-    color: transparent;
-  }
+  background-color: ${(props) => props.theme.primary};
+  color: #fff;
 `;
 const PreviewImg = styled.img`
-  max-width: 100%;
+  width: 350px;
+  height: 350px;
   margin-top: 10px;
 `;
 const PreviewImgDiv = styled.div`
@@ -53,9 +48,9 @@ const ModalOverlay = styled.div`
   backdrop-filter: blur(2px);
 `;
 const ModalContent = styled.div`
-  background-color: #fff;
+  background-color: ${(props) => props.theme.secondary};
   padding: 20px;
-  width: 400px;
+  /* width: 400px; */
   border-radius: 12px;
   animation: ${fadeIn} 0.3s;
 `;
@@ -70,8 +65,6 @@ const CloseModalSvg = styled.svg`
 const CloseModalSvgDiv = styled.div`
   float: right;
 `;
-
-
 
 export {
   StLabel,
