@@ -6,7 +6,6 @@ import {
   ModalOverlay,
 } from "./styles";
 const ModalForm = ({ children, closeModal }) => {
-    
   const modalRef = useRef();
   const clickOutside = (event) => {
     if (modalRef.current === event.target) {
@@ -19,7 +18,6 @@ const ModalForm = ({ children, closeModal }) => {
       document.removeEventListener("mousedown", clickOutside);
     };
   }, []);
-
 
   return (
     <ModalOverlay ref={modalRef}>

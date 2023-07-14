@@ -73,6 +73,16 @@ const Login = () => {
 
   const signUpMutation = useMutation(signUp, {
     onSuccess: () => {
+      const date = new Date();
+      const nowTime = date.toLocaleString();
+      const newUser = {
+        id: uuid(),
+        email: joinId,
+        nickname: joinNickname,
+        profileImg: previewUrl ? previewUrl : "defaultImg.png",
+        date: nowTime,
+      };
+      addUserMutation.mutate(newUser);
       return alert("회원가입이 정상적으로 처리 되었습니다.");
     },
     onError: (error) => {
@@ -98,20 +108,11 @@ const Login = () => {
   const clickEventSignUp = async () => {
     if (typeof joinId !== "string" || typeof joinPassword !== "string")
       return alert("id 또는 password가 string이 아닙니다.");
-    const date = new Date();
-    const nowTime = date.toLocaleString();
-    const newUser = {
-      id: uuid(),
-      email: joinId,
-      nickname: joinNickname,
-      profileImg: previewUrl ? previewUrl : "defaultImg.png",
-      date: nowTime,
-    };
+
     signUpMutation.mutate({
       id: joinId,
       password: joinPassword,
     });
-    addUserMutation.mutate(newUser);
     closeModal();
   };
   const clickEventLogin = () => {
