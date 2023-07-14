@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+## [디스코딩]
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+리액트를 기반으로 한 코드 공유 웹 페이지 입니다.<br>
+코딩 관련 게시물을 저장 및 공유하며 유저들과 소통하고 지식의 폭을 넓힐 수 있습니다.<br>
+테마는 현재 상용화중인 '디스코드' 를 참고하여 만들었습니다.<br>
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 기능 구현
+1. 로그인, 회원가입, 로그아웃 -> mock 서버 이용<br>
+2. 게시물 작성, 수정, 삭제 -> 수정 및 삭제는 게시물을 작성한 사람만 가능하게 구현
+3. 게시물 상세보기
+4. 가입된 회원 및 게시물 리스트 업
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## How To Use
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+# node_module 다운로드
+$ yarn
 
-### `yarn test`
+# json-server 시작
+$ yarn json-server --watch db.json --port 4000
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# 프로젝트 시작
+$ yarn start
+```
 
-### `yarn build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 프로젝트 구조
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+📦src<br>
+┣ 📂components&emsp; <br>
+┃ ┣ 📂Button<br>
+┃ ┃ ┣ 📜Button.jsx&emsp; 👉 게시글 작성<br>
+┃ ┃ ┗ 📜styles.js<br>
+┃ ┣ 📂ContentBox<br>
+┃ ┃ ┣ 📜ContentBox.jsx&emsp; 👉 게시글 작성<br>
+┃ ┃ ┗ 📜styles.js<br>
+┃ ┣ 📂Header<br>
+┃ ┃ ┣ 📜Header.jsx&emsp; 👉 게시글 작성<br>
+┃ ┃ ┗ 📜styles.js<br>
+┃ ┣ 📂Modal<br>
+┃ ┃ ┣ 📜ModalForm.jsx&emsp; 👉 게시글 작성<br>
+┃ ┃ ┣ 📜ModifyModal.jsx&emsp; 👉 게시글 작성<br>
+┃ ┃ ┣ 📜PostModal.jsx&emsp; 👉 게시글 작성<br>
+┃ ┃ ┗ 📜styles.js<br>
+┃ ┗ 📂PostList<br>
+┃   ┣ 📜PostList.jsx&emsp; 👉 게시글 작성<br>
+┃   ┗ 📜styles.js<br>
+┣ 📂hooks&emsp; 👉 페이지 이동<br>
+┃ ┗ 📜userInput.jsx<br>
+┣ 📂pages<br>
+┃ ┃ 📜Login.jsx<br>
+┃ ┗ 📜Main.jsx<br>
+┣ 📂shared<br>
+┃ ┗ 📜Router.js<br>
+┣ 📂style<br>
+┗ ┗📜GlobalStyle.jsx<br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `yarn eject`
+## 커밋 컨벤션
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Feat : 새로운 기능 추가
+- Fix : 버그 수정
+- Docs : 문서 변경
+- Style : 코드 포맷팅 등 스타일 관련 변경
+- Refactor : 코드 리팩토링
+- Chore : 설정 변경 등의 기타 변경사항
+- Design : CSS 등 사용자 UI 디자인 변경
+- Rename : 파일 또는 폴더 명을 수정하거나 옮기는 작업
+- Resolve: 병합시 충돌 해결
