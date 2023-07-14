@@ -31,33 +31,36 @@ $ yarn start
 ## 프로젝트 구조
 
 📦src<br>
+┣ 📂api&emsp; <br>
+┃ ┃ ┣ 📜posts.jsx&emsp;👉 게시물 관련 axios<br>
+┃ ┃ ┗ 📜users.js&emsp;👉 회원 관련 axios<br>
 ┣ 📂components&emsp; <br>
 ┃ ┣ 📂Button<br>
-┃ ┃ ┣ 📜Button.jsx&emsp; 👉 공통 버튼 컴포넌트<br>
+┃ ┃ ┣ 📜Button.jsx&emsp;👉 공통 버튼 컴포넌트<br>
 ┃ ┃ ┗ 📜styles.js<br>
 ┃ ┣ 📂ContentBox<br>
-┃ ┃ ┣ 📜ContentBox.jsx&emsp; 👉 게시글 상세보기 페이지<br>
+┃ ┃ ┣ 📜ContentBox.jsx&emsp;👉 게시글 상세보기 페이지<br>
 ┃ ┃ ┗ 📜styles.js<br>
 ┃ ┣ 📂Header<br>
-┃ ┃ ┣ 📜Header.jsx&emsp; 👉 헤더영역<br>
+┃ ┃ ┣ 📜Header.jsx&emsp;👉 헤더영역<br>
 ┃ ┃ ┗ 📜styles.js<br>
 ┃ ┣ 📂Modal<br>
-┃ ┃ ┣ 📜ModalForm.jsx&emsp; 👉 공통 모달 컴포넌트<br>
-┃ ┃ ┣ 📜ModifyModal.jsx&emsp; 👉 게시글 수정 모달창<br>
-┃ ┃ ┣ 📜PostModal.jsx&emsp; 👉 게시글 작성 모달창<br>
+┃ ┃ ┣ 📜ModalForm.jsx&emsp;👉 공통 모달 컴포넌트<br>
+┃ ┃ ┣ 📜ModifyModal.jsx&emsp;👉 게시글 수정 모달창<br>
+┃ ┃ ┣ 📜PostModal.jsx&emsp;👉 게시글 작성 모달창<br>
 ┃ ┃ ┗ 📜styles.js<br>
 ┃ ┗ 📂PostList<br>
-┃   ┣ 📜PostList.jsx&emsp; 👉 게시글 리스트 컴포넌트<br>
+┃   ┣ 📜PostList.jsx&emsp;👉 게시글 리스트 컴포넌트<br>
 ┃   ┗ 📜styles.js<br>
-┣ 📂hooks&emsp;<br>
-┃ ┗ 📜useInput.jsx<br> 👉 useInput 훅<br>
+┣ 📂hooks<br>
+┃ ┗ 📜useInput.jsx 👉 useInput 훅<br>
 ┣ 📂pages<br>
-┃ ┃ 📜Login.jsx<br> 👉 로그인 페이지<br>
-┃ ┗ 📜Main.jsx<br> 👉 메인 페이지<br>
+┃ ┃ 📜Login.jsx&emsp;👉 로그인 페이지<br>
+┃ ┗ 📜Main.jsx&emsp;👉 메인 페이지<br>
 ┣ 📂shared<br>
-┃ ┗ 📜Router.js<br> 👉 라우터<br>
+┃ ┗ 📜Router.js&emsp;👉 라우터<br>
 ┣ 📂style<br>
-┗ ┗📜GlobalStyle.jsx<br> 👉 글로벌 스타일 및 테마<br>
+┗ ┗📜GlobalStyle.jsx&emsp;👉 글로벌 스타일 및 테마<br>
 
 ---
 
@@ -72,3 +75,9 @@ $ yarn start
 - Design : CSS 등 사용자 UI 디자인 변경
 - Rename : 파일 또는 폴더 명을 수정하거나 옮기는 작업
 - Resolve: 병합시 충돌 해결
+---
+
+## API 명세서
+
+![image](https://github.com/kimjinsu0210/discoding/assets/78424449/7536b97e-8589-45de-a629-3946859cc47f)
+
