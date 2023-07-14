@@ -33,31 +33,31 @@ $ yarn start
 📦src<br>
 ┣ 📂components&emsp; <br>
 ┃ ┣ 📂Button<br>
-┃ ┃ ┣ 📜Button.jsx&emsp; 👉 게시글 작성<br>
+┃ ┃ ┣ 📜Button.jsx&emsp; 👉 공통 버튼 컴포넌트<br>
 ┃ ┃ ┗ 📜styles.js<br>
 ┃ ┣ 📂ContentBox<br>
-┃ ┃ ┣ 📜ContentBox.jsx&emsp; 👉 게시글 작성<br>
+┃ ┃ ┣ 📜ContentBox.jsx&emsp; 👉 게시글 상세보기 페이지<br>
 ┃ ┃ ┗ 📜styles.js<br>
 ┃ ┣ 📂Header<br>
-┃ ┃ ┣ 📜Header.jsx&emsp; 👉 게시글 작성<br>
+┃ ┃ ┣ 📜Header.jsx&emsp; 👉 헤더영역<br>
 ┃ ┃ ┗ 📜styles.js<br>
 ┃ ┣ 📂Modal<br>
-┃ ┃ ┣ 📜ModalForm.jsx&emsp; 👉 게시글 작성<br>
-┃ ┃ ┣ 📜ModifyModal.jsx&emsp; 👉 게시글 작성<br>
-┃ ┃ ┣ 📜PostModal.jsx&emsp; 👉 게시글 작성<br>
+┃ ┃ ┣ 📜ModalForm.jsx&emsp; 👉 공통 모달 컴포넌트<br>
+┃ ┃ ┣ 📜ModifyModal.jsx&emsp; 👉 게시글 수정 모달창<br>
+┃ ┃ ┣ 📜PostModal.jsx&emsp; 👉 게시글 작성 모달창<br>
 ┃ ┃ ┗ 📜styles.js<br>
 ┃ ┗ 📂PostList<br>
-┃   ┣ 📜PostList.jsx&emsp; 👉 게시글 작성<br>
+┃   ┣ 📜PostList.jsx&emsp; 👉 게시글 리스트 컴포넌트<br>
 ┃   ┗ 📜styles.js<br>
-┣ 📂hooks&emsp; 👉 페이지 이동<br>
-┃ ┗ 📜userInput.jsx<br>
+┣ 📂hooks&emsp;
+┃ ┗ 📜userInput.jsx<br> 👉 useInput 훅<br>
 ┣ 📂pages<br>
-┃ ┃ 📜Login.jsx<br>
-┃ ┗ 📜Main.jsx<br>
+┃ ┃ 📜Login.jsx<br> 👉 로그인 페이지<br>
+┃ ┗ 📜Main.jsx<br> 👉 메인 페이지<br>
 ┣ 📂shared<br>
-┃ ┗ 📜Router.js<br>
+┃ ┗ 📜Router.js<br> 👉 라우터<br>
 ┣ 📂style<br>
-┗ ┗📜GlobalStyle.jsx<br>
+┗ ┗📜GlobalStyle.jsx<br> 👉 글로벌 스타일 및 테마<br>
 
 ---
 
